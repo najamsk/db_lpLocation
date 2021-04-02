@@ -1,0 +1,28 @@
+MoftakDevEmails = []
+Environment = ""
+ABC=""
+PORT=4000 
+[CockroachDB]
+  Host = ""
+  Port = ""
+  Database = ""
+  User = ""
+  SSL = false
+
+[BasicAuth]
+  Username = ""
+  Password = ""
+
+[SMTP]
+  Host = ""
+	Port = 465
+	User = ""
+	Password = ""
+	EmailFrom = ""
+
+[Contact]
+	Phone = ""
+  Phone2 = ""
+  Email = ""
+  Web = ""
+  WebDisplay = ""

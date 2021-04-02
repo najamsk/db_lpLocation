@@ -1,0 +1,11 @@
+test-results/
+cockroach-data/
+tmp/
+routes/
+unzips/
+uploads/
+.env
+ftp.sh
+certs-162.252.80.136/
+lp7_micro_executable.bin
+*.exe

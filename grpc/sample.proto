@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package gservice;
+
+message SampleRequest {
+  int64 a = 1;
+  int64 b = 2;
+}
+
+message SampleResponse { 
+  int64 result = 1; 
+}
+
+service AddService {
+  rpc Add(SampleRequest) returns (SampleResponse);
+  rpc Multiply(SampleRequest) returns (SampleResponse);
+}

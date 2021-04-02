@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package gservice;
+
+import "requests.proto";
+import "responses.proto";
+//import "embed.proto";
+
+
+//TODO: all lower case? whats best practice how they will translate by plugin inside go?
+
+import "country.proto";
+service LocationRPC {
+  // List methods
+  rpc AllCountries(FilterLocation) returns (CountryList);
+  rpc AllStates(FilterLocation) returns (StateList);
+  rpc AllCities(FilterLocation) returns (CityList);
+  rpc AllLocations(FilterLocation) returns (LocationList);
+  rpc AllCategories(FilterCategory) returns (CategoryList);
+  rpc AllCategoryDetails(FilterCategoryDetail) returns (CategoryDetailList);
+  rpc AllFeatures(FilterFeature) returns (FeatureList);
+  rpc AllLocationFeatures(FilterFeature) returns (FeatureList);
+  rpc AllStaff(FilterStaff) returns (StaffList);
+
+  // Write methods
+  rpc SaveLocation(Location) returns (Location);
+  rpc SaveFeature(Feature) returns (Feature);
+  rpc SaveCategoryDetail(CategoryDetail) returns (CategoryDetail);
+  rpc SaveCategory(Category) returns (Category);
+
+}

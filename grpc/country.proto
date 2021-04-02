@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package gservice;
+
+import "embed.proto";
+
+//TODO: all lower case? whats best practice how they will translate by plugin inside go?
+
+message Country {
+  ResponseBase b = 1;
+  string countryname = 2;
+  bool isactive = 3;
+}
+
+message City {
+  ResponseBase b = 1;
+  string cityname = 2;
+  bool isactive = 3;
+  string countryid = 4;
+  string countryname = 5;
+  string statename = 6;
+  string stateid = 7;
+}
+
+
+message State {
+  ResponseBase b = 1;
+  string statename = 2;
+  bool isactive = 3;
+  string countryid = 4;
+  string countryname = 5;
+}
+
+message StateList {
+  repeated State states = 1;
+}
+
+message CityList {
+  repeated City cities = 1;
+}
+
+message CountryList {
+  repeated Country countries = 1;
+}
+
+// empty message since rpc methods needs it
+

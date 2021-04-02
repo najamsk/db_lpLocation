@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+import "embed.proto";
+package gservice;
+
+message MeraResponse {
+  string greeting = 1;
+}
+
+
+message Location {
+  ResponseBase b = 1;
+  string name = 2;
+  string displayname = 3;
+  bool isactive = 4;
+  GeoLocation gloc = 5;
+  Locality locality = 6;
+  string addressline1 = 7;
+  string addressline2 = 8;
+  string mobile = 9;
+  string phonenumber = 10;
+  string fax = 11;
+  FeatureList allfeatures = 12;
+  FeatureList locationfeatures = 13;
+  repeated string locationfeatureids =14; 
+  
+  
+}
+
+message LocationList {
+  repeated Location locations =1; 
+}
+
+message Category {
+  ResponseBase b =1;
+  string name = 2;
+  bool isactive = 3;
+}
+
+message CategoryDetail {
+  ResponseBase b =1;
+  string name = 2;
+  bool isactive = 3;
+  string categoryid = 4;
+  string categoryname = 5;
+  string parentcategoryid = 6;
+}
+
+message Feature {
+  ResponseBase b =1;
+  string name = 2;
+  bool isactive = 3;
+  string locationid = 4;
+  string locationname = 5;
+  string categorydetailid = 6;
+  string categorydetailname = 7;
+  string currncy = 8;
+  double price = 9;
+  bool isaddon = 10;
+}
+
+message StaffMember {
+  ResponseBase b =1;
+  string userid = 2;
+  string locationid = 3;
+  bool isactive = 4;
+  string firstname = 5;
+  string lastname = 6;
+  string email = 7;
+  string mobile = 8;
+  string title = 9;
+  string designation = 10;
+  bool issecondshift = 11;
+}
+
+message CategoryList{
+  repeated Category categories = 1;
+}
+message CategoryDetailList{
+  repeated CategoryDetail categorydetails = 2;
+}
+message FeatureList{
+  repeated Feature features = 1;
+}
+//message LocationFeatureList{
+//  repeated Feature features = 1;
+//}
+//message Features{
+ // repeated Feature allfeatures = 1;
+ // repeated Feature locationf = 2;
+//}
+
+message StaffList{
+  repeated StaffMember members = 1;
+}

@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package gservice;
+
+import "google/protobuf/timestamp.proto";
+
+//embeded
+message ResponseBase {
+  string id = 1;
+  string createdby = 2;
+  string createdat = 3;
+  string updatedby = 4;
+  string updatedat = 5;
+  google.protobuf.Timestamp createdatunix = 6;
+  google.protobuf.Timestamp updatedatunix = 7;
+}
+
+message GeoLocation {
+  double lat = 1;
+  double lon = 2;
+  double radius = 3;
+}
+
+message Locality {
+  string countryid = 1;
+  string countryname = 2;
+  string stateid = 3;
+  string statename = 4;
+  string cityid = 5;
+  string cityname = 6;
+}
+
+message Empty{}
+
+message FilterBase {
+ int32 skip = 1;
+ int32 limit = 2;
+ bool isactive = 3;
+ //checkisActive anotherfield maybe 
+}

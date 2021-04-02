@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package gservice;
+
+message FilterLocation {
+  string countryid = 1;
+  string stateid = 2;
+  string cityid = 3;
+  bool isactive = 4;
+  string countryname = 6;
+  string statename = 7;
+  string cityname = 8;
+  string locationname =9;
+  string locationid= 10;
+}
+
+
+message FilterCategory {
+  string categoryid= 1;
+  oneof isactive {
+    bool has_isactive = 2;
+    bool isactive_value = 3;
+  }
+}
+
+message FilterCategoryDetail {
+  string categoryid= 1;
+  string categorydetailid= 2;
+  oneof isactive {
+    bool has_isactive = 3;
+    bool isactive_value = 4;
+  }
+  string parentcategoryid= 5;
+}
+
+message FilterFeature {
+  string featureid = 1;
+  string categorydetailid = 2;
+  string name = 3;
+  string locationid = 4;
+  bool isaddon = 5;
+  oneof isactive {
+    bool has_isactive = 6;
+    bool isactive_value = 7;
+  }
+}
+
+message FilterStaff {
+  string userid = 1;
+  string locationid = 2;
+  string firstname = 3;
+  string lastname = 4;
+  string email = 5;
+  string designation = 6;
+  string issecondshift = 7;
+  oneof isactive {
+    bool has_isactive = 8;
+    bool isactive_value = 9;
+  }
+}
